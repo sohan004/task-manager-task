@@ -1,0 +1,312 @@
+body {
+  font-family: "Urbanist", sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: white;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.card {
+  width: 100%;
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px 24px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  border: 1px solid #ebe9e9;
+  font-family: "Segoe UI", sans-serif;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.active-card {
+  background: #f2fffa;
+  border-color: #c6e4d1;
+  background: linear-gradient(
+    162deg,
+    rgba(247, 252, 250, 1) 0%,
+    rgb(230, 245, 236) 100%
+  );
+}
+
+.active-card .card-status {
+  border-top: 1px solid #c6e4d1;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+  margin-bottom: 5px;
+  color: #333;
+  font-size: 1.5rem;
+}
+
+.card p {
+  color: #555;
+  font-size: 1rem;
+}
+
+.card-status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 12px;
+  border-top: 1px solid #eee;
+  margin-top: 15px;
+}
+
+.card-status h4 {
+  margin: 0;
+  color: #888;
+  font-size: 0.95rem;
+}
+
+.card-status p {
+  margin: 4px 0 0;
+  font-size: 0.9rem;
+}
+
+.closed {
+  color: green;
+  text-transform: uppercase !important;
+  font-weight: 500;
+}
+
+.open-btn {
+  background-color: #16a34a;
+  color: white;
+  border: none;
+  padding: 7px 10px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.open-btn:hover {
+  background-color: #15803d;
+}
+
+.nav-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.task-input {
+  flex: 1 1 0%;
+  width: 100%;
+  padding: 10px 14px;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+}
+
+.checkbox-group {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.checkbox-group label {
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.add-task-btn {
+  padding: 10px 20px;
+  background-color: #16a34a;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-task-btn:hover {
+  background-color: #0c4e24;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.add-modal {
+  background-color: #fff;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+  padding: 20px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+  position: relative;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.modal-header h3 {
+  font-size: 1.2rem;
+  color: #111;
+}
+
+.close-icon {
+  cursor: pointer;
+  color: #555;
+  transition: color 0.2s;
+}
+
+.close-icon:hover {
+  color: #000;
+}
+
+.modal-body label {
+  display: block;
+  font-weight: 600;
+  margin: 10px 0 6px;
+  color: #333;
+  width: 100%;
+}
+
+.modal-body label span {
+  color: red;
+}
+
+.modal-body input,
+.modal-body textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+  outline: none;
+}
+
+.save-btn {
+  background-color: #16a34a;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.save-btn:hover {
+  background-color: #15803d;
+}
+
+.task-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 30px;
+}
+
+.btn-group {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 850px) {
+  .task-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    padding: 16px;
+    background-color: #f9fafb;
+  }
+
+  .add-task-btn,
+  .task-input-container {
+    width: 100%;
+    justify-content: center;
+  }
+
+  body {
+    padding: 16px;
+  }
+
+  .card h3 {
+    font-size: 1.3rem;
+  }
+
+  .card p {
+    font-size: 1rem;
+  }
+
+  .card-status {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    margin-top: 20px;
+  }
+
+  .task-list {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 640px) {
+  .nav-container {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .task-input {
+    margin-bottom: 0;
+  }
+
+  .checkbox-group {
+    margin-bottom: 0;
+  }
+}
