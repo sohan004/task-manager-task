@@ -39,7 +39,7 @@ const TaskInput = ({
       completed: editTask ? editTask.completed : false,
       createdAt: editTask?.createdAt
         ? editTask.createdAt
-        : new Date().toLocaleString(),
+        : Date.now(),
     };
 
     handleSubmit(
