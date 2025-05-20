@@ -28,7 +28,7 @@ const TaskItem = ({
         <p>{item.description}</p>
         <div className="card-status">
           <div>
-            <h4>{dayjs(item.createdAt).format("DD MMM, YYYY")}</h4>
+            <h4>{dayjs(new Date(item.createdAt)).format("DD MMM, YYYY")}</h4>
             <p>
               Status:{" "}
               <span className="closed">
