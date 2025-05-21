@@ -39,7 +39,7 @@ const TaskList = ({
           className="empty-list"
         >
           <Image
-            style={{ maxWidth: "500px", width: "100%", margin: "20px auto" }}
+            style={{ maxWidth: "500px", width: "100%", margin: "20px auto" , objectFit: "cover"}}
             src={img}
             alt="empty"
           />
